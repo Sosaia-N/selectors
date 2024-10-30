@@ -12,6 +12,14 @@
                 background-color:yellow;
             }
 
+            li.new-list,div#new-div{
+                background-color:orange;
+            }
+
+            div.grandkids li{
+                background-color:red;
+            }
+
             li.my-list{
                 background-color: blue;
             }
@@ -27,6 +35,7 @@
                 <li><a href="#id">id</a></li>
                 <li><a href="#class">class</a></li>
                 <li><a href="#compound">compound</a></li>
+                <li><a href="#descendant">descendant</a></li>
             </ul>
         </nav> 
     </header>           
@@ -53,7 +62,7 @@
             <p>Here's how we hook a class attribute to an element:</p>
             <pre><code>class="my-list"</code></pre>
             <p>Here's how the CSS is applied to the element:</p>
-            <pre><code>li.my-list{
+            <pre><code>li.new-list,div#new-div{
     background-color:blue;
 }</code></pre>
 
@@ -61,9 +70,48 @@
             <p>Here's what it looks like:</p>
             <div>
                 <ul>
-                    <li class="my-list">I'm in an li with a class of my-list</li>
-                    <li class="my-list">I'm in an li with a class of my-list</li>
-                    <li class="my-list">I'm in an li with a class of my-list</li>
+                    <li>class="my-list">I'm in an li with a class of my-list</li>
+                    <li>class="my-list">I'm in an li with a class of my-list</li>
+                    <li>class="my-list">I'm in an li with a class of my-list</li>
+                </ul>
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend><a id="compound">compound</a></legend>
+            <p>A compound selecter allowes more then one selector block to be separed by a comma</p>
+            <p>Here's how the CSS is applied to the element:</p>
+            <pre><code>div#id-div{
+    background-color:orange;
+}</code></pre>
+
+
+            <p>Here's what it looks like:</p>
+            <div id="new-div">Inside new-div</div>
+            <div>
+                <ul>
+                    <li class="new-list">I'm inside new-list</li>
+                    <li class="new-list">I'm inside new-list</li>
+                    <li class="new-list">I'm inside new-list</li>
+                </ul>
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend><a id="descendant">descendant</a></legend>
+            <p>A descendant seletor effects all element inside the curunt element, at any level</p>
+            <p>Here's how the CSS is applied to the element:</p>
+            <pre><code>div#id-div{
+    background-color:red;
+}</code></pre>
+
+
+            <p>Here's what it looks like:</p>
+            <div class="grandkids">
+                <ul>
+                    <li>I'm in the grandkids list</li>
+                    <li>I'm in the grandkids list</li>
+                    <li>I'm in the grandkids list</li>
                 </ul>
             </div>
         </fieldset>
